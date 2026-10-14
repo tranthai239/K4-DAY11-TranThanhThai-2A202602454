@@ -1,0 +1,23 @@
+{
+  "format": "avsim-studio/1",
+  "params": {},
+  "policy": {},
+  "hazards": [
+    {
+      "type": "ped",
+      "x": 135.0,
+      "side": "S",
+      "v": 1.45,
+      "t0": 0.0,
+      "trig": 22.0
+    }
+  ],
+  "ego": "planner",
+  "space": {
+    "h0_x": [115.0, 145.0],
+    "h0_v": [1.1, 1.8],
+    "h0_trig": [12.0, 28.0]
+  },
+  "exposure": 0.03,
+  "why": "Người đi bộ sang đường tự phát bất ngờ ngay sau khu vực trạm dừng xe buýt và vạch qua đường (x = 115-145 m) do bị khuất tầm nhìn bởi xe buýt và luồng xe. Căn cứ thống kê hành vi người đi bộ đô thị NHTSA: xác suất gặp người sang đường tự phát ngoài vạch gần trạm trung chuyển khoảng 0.03 lần mỗi chuyến đi (3%); vận tốc đi bộ thực tế 1.1-1.8 m/s; cự ly kích hoạt 12-28 m khi xe ta vừa tăng tốc sau khi qua trạm xe buýt khiến planner chỉ phanh IDM thông thường (b=2 m/s^2) khi người đã lọt sâu vào làn và dẫn tới va chạm, trong khi phanh khẩn cấp kịch sàn theo giới hạn bám của lốp (mu*g) hoàn toàn tránh được."
+}

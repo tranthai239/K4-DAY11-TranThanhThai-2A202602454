@@ -9,4 +9,9 @@ def choose_policy(table: list[dict], baseline_progress: float, max_loss: float =
 
     Ranking by the UPPER bound, not the point estimate, stops you picking a policy that only looks safe
     because its few test crashes happened not to be drawn."""
-    raise NotImplementedError("TODO 10: choose_policy")
+    threshold = (1.0 - max_loss) * baseline_progress
+    candidates = [row for row in table if row["progress"] >= threshold]
+    if not candidates:
+        return None
+    candidates.sort(key=lambda row: (row["fail_hi"], -row["progress"]))
+    return candidates[0]
